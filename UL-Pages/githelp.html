@@ -11,5 +11,49 @@
         <a href="../index.html">Home</a>
         <a href="./flexboxhelp.html">Flexbox Help</a>
     </header>
+    <h1>GIT COMMANDS</h1>
+    <ul>
+        <li>
+            <h2>Configuration and setup</h2>
+            <h3><code>git config</code></h3>
+            <p>Function: Sets user information and preferences.</p>
+            <p>Common Variations:</p>
+            <p><code>git config --global user.name "Your Name"</code></p>
+            <p><code>git config --global user.email "you@example.com"</code></p>
+            <p><code>git config --list</code> (view config)</p>
+            <p>When to use: First-time setup or when changing Git identity/preferences.</p>
+        </li>
+        <li>
+            <h2>Creating and Cloning Repositories</h2>
+            <h3><code>git init</code></h3>
+            <p>Function: Initializes a new Git repository in the current folder.</p>
+            <p>When to use: Starting a new project under version control.</p>
+            <h3><code>git clone [SSH]</code></h3>
+            <p>Function: Creates a local copy of a remote repository</p>
+            <p>Variations</p>
+            <p><code>git clone [url] [directory]</code> (clone into a specific folder)</p>
+            <p><code>git clone --branch [branch] [url]</code> (clone only a specific branch)</p>
+            <p>When to use: Begin working on an existing project from GitHub, GitLab, etc.</p>
+        </li>
+        <li>
+            <h2>Checking Status and History</h2>
+            <h3><code>git status</code></h3>
+            <p>Function: Shows Changes in working directory, staged changes, and untracked files.</p>
+            <p>When to use: Before staging, committing, or pushing.</p>
+            <h3><code>git log</code></h3>
+            <p>Function: Displays commit history.</p>
+            <p>Variations:</p>
+            <p><code>git log --oneline</code> (compact view)</p>
+            <p><code>git log --graph --oneline --decorate</code> (branch visualization)</p>
+            <p>When to use: Reviewing history or identifying commits.</p>
+            <h3><code>git diff</code></h3>
+            <p>Function: Shows differences between working files, staging area, or commits.</p>
+            <p>Variations:</p>
+            <p><code>git diff</code> (working directory vs. staging)</p>
+            <p><code>git diff --staged</code> (staging vs. last commit)</p>
+            <p><code>git diff [commit1] [commit2]</code></p>
+            <p>When to use: Checking what has changed befor committing.</p>
+        </li>
+    </ul>
 </body>
 </html>
