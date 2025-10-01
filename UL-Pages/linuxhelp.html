@@ -19,6 +19,9 @@
             <li><a href="#process">Processes and System Monitoring</a></li>
             <li><a href="#disk">Disk and Filesystem Management</a></li>
             <li><a href="#network">Networking</a></li>
+            <li><a href="#"></a></li>
+            <li><a></a></li>
+            <li><a></a></li>
         </ol>
     </header>
     <h1>LINUX HELP</h1>
@@ -178,7 +181,47 @@
             <p>When to use: File transfer between systems.</p>
         </li>
         <li>
-
+            <h2 id="archive">Archiving and Compression</h2>
+            <h3><code>tar</code></h3>
+            <p>Function: Archive files.</p>
+            <p>Variations:</p>
+            <p><code>tar -cvf archive.tar files</code></p>
+            <p><code>tar -xvf archive.tar</code></p>
+            <p><code>tar -czvf archive.tar.gz files</code> (with compression)</p>
+            <p>When to use: Bundling files/directories.</p>
+            <p>When to use: Bundling files/directories.</p>
+            <h3><code>gzip</code> / <code>gunzip</code></h3>
+            <p>Function: Compress/decompress files.</p>
+            <p>When to use: Compressing single files.</p>
+            <h3><code>zip</code> / <code>unzip</code></h3>
+            <p>Function: Compress/uncompress zip archives.</p>
+            <p>When to use: Handling zip files.</p>
+        </li>
+        <li>
+            <h2 id="pack">Package Management</h2>
+            <p><code>apt update && apt upgrade</code> (update packages)</p>
+            <p><code>apt install package</code></p>
+            <p><code>apt remove package</code></p>
+            <p>When to use: Installing, updating, removing software.</p>
+        </li>
+        <li>
+            <h2 id="user">User and System Management</h2>
+            <h3><code>whoami</code></h3>
+            <p>Function: Show current user</p>
+            <h3><code>id</code></h3>
+            <p>Shows user ID and group info.</p>
+            <h3><code>adduser</code> / <code>useradd</code></h3>
+            <p>Function: Create new user accounts.</p>
+            <h3><code>passwd</code></h3>
+            <p>Function: Change user password.</p>
+            <h3><code>sudo</code></h3>
+            <p>Function: Run commands with elevated privileges.</p>
+            <p>When to use: For administrative tasks.</p>
+            <h3><code>shutdown</code> / <code>reboot</code></h3>
+            <p>Function: Power off or restart system.</p>
+            <p>Variations:</p>
+            <p><code>shutdown -h now</code></p>
+            <p><code>reboot</code></p>
         </li>
     </ol>
 </body>
