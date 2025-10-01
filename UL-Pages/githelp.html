@@ -10,11 +10,19 @@
     <header>
         <a href="../index.html">Home</a>
         <a href="./flexboxhelp.html">Flexbox Help</a>
+        <ol>
+            <li><a href="#config">Configuration and Setup</a></li>
+            <li><a href="#repository">Creating and Cloning Repositories</a></li>
+            <li><a href="#status">Checking Status and History</a></li>
+            <li><a href="#stage">Staging and Committing</a></li>
+            <li><a href="#branch">Branching and Merging</a></li>
+            <li><a href="#remote">Remote Repositories</a></li>
+        </ol>
     </header>
     <h1>GIT COMMANDS</h1>
-    <ul>
+    <ol>
         <li>
-            <h2>Configuration and setup</h2>
+            <h2 id="config">Configuration and Setup</h2>
             <h3><code>git config</code></h3>
             <p>Function: Sets user information and preferences.</p>
             <p>Common Variations:</p>
@@ -24,7 +32,7 @@
             <p>When to use: First-time setup or when changing Git identity/preferences.</p>
         </li>
         <li>
-            <h2>Creating and Cloning Repositories</h2>
+            <h2 id="repository">Creating and Cloning Repositories</h2>
             <h3><code>git init</code></h3>
             <p>Function: Initializes a new Git repository in the current folder.</p>
             <p>When to use: Starting a new project under version control.</p>
@@ -36,7 +44,7 @@
             <p>When to use: Begin working on an existing project from GitHub, GitLab, etc.</p>
         </li>
         <li>
-            <h2>Checking Status and History</h2>
+            <h2 id="status">Checking Status and History</h2>
             <h3><code>git status</code></h3>
             <p>Function: Shows Changes in working directory, staged changes, and untracked files.</p>
             <p>When to use: Before staging, committing, or pushing.</p>
@@ -54,6 +62,76 @@
             <p><code>git diff [commit1] [commit2]</code></p>
             <p>When to use: Checking what has changed befor committing.</p>
         </li>
-    </ul>
+        <li>
+            <h2 id="stage">Staging and Committing</h2>
+            <h3><code>git add</code></h3>
+            <p>Function: Stages files for commit.</p>
+            <p>Variations:</p>
+            <p><code>git add [file]</code> (single file)</p>
+            <p><code>git add .</code> (all changes in current directory)</p>
+            <p><code>git add -p</code> (interactive staging by hunk)</p>
+            <p>When to use: Before committing changes.</p>
+            <h3><code>git commit</code></h3>
+            <p>Function: Saves staged changes to history.</p>
+            <p>Variations:</p>
+            <p><code>git commit -m "message"</code></p>
+            <p><code>git commit -a -m "message"</code> (stages and commits tracked files)</p>
+            <p><code>git commit --amend</code> (edit last commit)</p>
+            <p>When to use: To record changes, amend mistakes, or update messages.</p>
+        </li>
+        <li>
+            <h2 id="branch">Branching and Merging</h2>
+            <h3><code>git branch</code></h3>
+            <p>Function: Lists, creates, or deletes branches.</p>
+            <p>Variations:</p>
+            <p><code>git branch</code> (list branches)</p>
+            <p><code>git branch [name]</code> (create branch)</p>
+            <p><code>git branch -d [name]</code> (delete branch)</p>
+            <p>When to use: Managing different lines of development.</p>
+            <h3><code>git checkout</code></h3>
+            <p>Function: Switches branches or restores files.</p>
+            <p>Variations:</p>
+            <p><code>git checkout [branch]</code> (switch to branch)</p>
+            <p><code>git checkout -b [branch]</code> (create and switch)</p>
+            <p><code>git checkout [file]</code> (restore file)</p>
+            <p>When to use: Moving between branches or undoing file changes.</p>
+            <h3><code>git switch</code></h3>
+            <p>Function: Modern alternative to <code>checkout</code> for branch switching.</p>
+            <p>Variations:</p>
+            <p><code>git switch [branch]</code></p>
+            <p><code>git switch -c [branch]</code> (create and switch)</p>
+            <p>When to use: Prefef over <code>checkout</code> when switching branches.</p>
+            <h3><code>git merge</code></h3>
+            <p>Function: Combines changes from one branch into another.</p>
+            <p>When to use: Integrating completed feature branches.</p>
+            <h3><code>git rebase</code></h3>
+            <p>Function: Moves commits to a new base.</p>
+            <p>When to use: Keeping commit history linear. Use with caution on shared branches.</p>
+        </li>
+        <li>
+            <h2 id="remote">Remote Repositories</h2>
+            <h3><code>git remote</code></h3>
+            <p>Function: Manages remote repository connections.</p>
+            <p>Variations:</p>
+            <p><code>git remote -v</code> (list remotes)</p>
+            <p><code>git remote add [name] [url]</code></p>
+            <p>When to use: Linking local repo to remotes.</p>
+            <h3><code>git fetch</code></h3>
+            <p>Function: Downloads remote changes without merging.</p>
+            <p>When to use: To preview remote updates before merging.</p>
+            <h3><code>git pull</code></h3>
+            <p>Function: Fetches and merges remote changes.</p>
+            <p>Variations:</p>
+            <p><code>git pull --rebase</code> (fetch and rebase instead of merge)</p>
+            <p>When to use: Keeping local branch updated with remote.</p>
+            <h3><code>git push</code></h3>
+            <p>Function: Uploads local commits to remote.</p>
+            <p>Variations:</p>
+            <p><code>git push origin [branch]</code></p>
+            <p><code>git push -u origin [branch]</code> (set upstream branch)</p>
+            <p><code>git push --force</code> (overwrite remote history, dangerous)</p>
+            <p>When to use: Sharing commits with others.</p>
+        </li>
+    </ol>
 </body>
 </html>
