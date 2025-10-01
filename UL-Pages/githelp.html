@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git Help</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/home/jimmyblundo/repos/help-website/important-info/styles.css">
 </head>
 <body>
     <header>
         <a href="../index.html">Home</a>
-        <a href="./flexboxhelp.html">Flexbox Help</a>
-        <ol>
+        <a href="./flexboxhelp.html">Flexbox</a>
+        <a href="./linuxhelp.html">Linux</a>
+        <ol class="toolbar">
             <li><a href="#config">Configuration and Setup</a></li>
             <li><a href="#repository">Creating and Cloning Repositories</a></li>
             <li><a href="#status">Checking Status and History</a></li>
             <li><a href="#stage">Staging and Committing</a></li>
             <li><a href="#branch">Branching and Merging</a></li>
             <li><a href="#remote">Remote Repositories</a></li>
+            <li><a href="undoing-fixing">Undoing and Fixing</a></li>
+            <li><a href="#advanced">Advanced/Helpful Commands</a></li>
+            <li><a href="#compare">Comparison: When to Use What</a></li>
+            
         </ol>
     </header>
     <h1>GIT COMMANDS</h1>
@@ -131,6 +136,64 @@
             <p><code>git push -u origin [branch]</code> (set upstream branch)</p>
             <p><code>git push --force</code> (overwrite remote history, dangerous)</p>
             <p>When to use: Sharing commits with others.</p>
+        </li>
+        <li>
+            <h2 id="undoing-fixing">Undoing and Fixing</h2>
+            <h3><code>git reset</code></h3>
+            <p>Function: Moves HEAD to a different commit and optionally updates the index (staging area) and working directory.</p>
+            <p>Common Variations:</p>
+            <p><code>git reset --soft [commit]</code> (move HEAD only; keep changes staged)</p>
+            <p><code>git reset --mixed [commit]</code> (default — move HEAD and unstage changes, changes remain in working dir)</p>
+            <p><code>git reset --hard [commit]</code> (move HEAD and discard all working-directory and staged changes)</p>
+            <p>When to use: To undo or rewrite local commits before they are pushed. <strong>Be careful</strong> with <code>--hard</code> because it permanently discards changes.</p>
+
+            <h3><code>git revert</code></h3>
+            <p>Function: Creates a new commit that reverses the changes introduced by an earlier commit.</p>
+            <p>Common Variations:</p>
+            <p><code>git revert [commit]</code> (revert a single commit)</p>
+            <p><code>git revert --no-commit [commit]</code> (apply the revert but leave changes staged so you can bundle multiple reverts into one commit)</p>
+            <p>When to use: To safely undo changes in shared/public history — it preserves history by adding a new commit that undoes the specified commit.</p>
+
+            <h3><code>git stash</code></h3>
+            <p>Function: Temporarily saves (stashes) uncommitted changes so you can work on a clean tree, then reapply them later.</p>
+            <p>Common Variations:</p>
+            <p><code>git stash</code> (stash tracked modifications and staged changes)</p>
+            <p><code>git stash save "message"</code> (stash with a description; older syntax)</p>
+            <p><code>git stash list</code> (show stashed entries)</p>
+            <p><code>git stash pop</code> (apply the most recent stash and remove it from the stash list)</p>
+            <p><code>git stash apply</code> (apply a particular stash without removing it)</p>
+            <p><code>git stash drop</code> (delete a specific stash)</p>
+            <p>When to use: When you need to switch branches or pull changes but aren’t ready to commit your current work. Use <code>pop</code> to reapply and remove the stash, or <code>apply</code> if you want to keep it for later reuse.</p>
+        </li>
+        <li>
+            <h2 id="advanced">Advanced/Helpful Commands</h2>
+            <h3><code>git tag</code></h3>
+            <p>Function: Marks specific commits as releases.</p>
+            <p>Variations:</p>
+            <p><code>git tag [name]</code></p>
+            <p><code>git tag -a [name] -m "message"</code></p>
+            <p><code>git push origin [tag]</code></p>
+            <p>When to use: Versioning and release management.</p>
+            <h3><code>git cherry-pick [commit]</code></h3>
+            <p>Function: Applies a specific commit onto the current branch.</p>
+            <p>When to use: Bringing over single changes without merging branches.</p>
+            <h3><code>git reflog</code></h3>
+            <p>Function: Shows history of all HEAD movements.</p>
+            <p>When to use: Recovering lost commits after resets or mistakes.</p>
+            <h3><code>git clean</code></h3>
+            <p>Function: Removes untracked files.</p>
+            <p>Variations:</p>
+            <p><code>git clean -n</code> (preview)</p>
+            <p><code>git clean -f</code> (force delete)</p>
+            <p>When to use: Cleaning up a working directory.</p>
+        </li>
+        <li>
+            <h2 id="compare">Comparison: When to Use What</h2>
+            <p><code>merge</code> VS. <code>rebase</code>: Use <code>merge</code> for preserving full branch history and use <code>rebase</code> for a cleaner, linear history.</p>
+            <p><code>reset</code> VS. <code>rebase</code>: Use <code>reset</code> for local undo (before pushing); use <code>revert</code> for undoing changes in shared history.</p>
+            <p><code>checkout</code> VS. <code>switch</code>: Prefer <code>switch</code> for branch changes; use <code>checkout</code> when restoring files.</p>
+            <p><code>pull</code> VS. <code>fetch</code>: Use <code>fetch</code> to preview changes</p>
+        
         </li>
     </ol>
 </body>
