@@ -4,13 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux Help</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
         <a href="../index.html">Home</a>
         <a href="./githelp.html">Git</a>
         <a href="./flexboxhelp.html">Flexbox</a>
+        <ol class="toolbar">
+            <li><a href="#nav">Navigation and Filesystem</a></li>
+            <li><a href="#manage">File Management</a></li>
+            <li><a href="#view">Viewing and Editing Files</a></li>
+            <li><a href="#perms">Permissions and Ownership</a></li>
+            <li><a href="#process">Processes and System Monitoring</a></li>
+            <li><a href="#disk">Disk and Filesystem Management</a></li>
+            <li><a href="#network">Networking</a></li>
+        </ol>
     </header>
+    <h1>LINUX HELP</h1>
+    <ol>
+        <li>
+            <h2 id="#nav">Navigation and Filesystem</h2>
+            <h3><code>pwd</code></h3>
+            <p>Function: Print working directory.</p>
+            <p>When to use: To know your current location in the filesystem.</p>
+            <h3><code>ls</code></h3>
+            <p>Function: List files and directories.</p>
+            <p>Variations:</p>
+            <p><code>ls -l</code> (long format, details)</p>
+            <p><code>ls -a</code> (include hidden files)</p>
+            <p><code>ls -lh</code> (human-readable sizes)</p>
+            <p>When to use: Exploring directory contents.</p>
+            <h3><code>cd</code></h3>
+            <p>Function: Change directory.</p>
+            <p>Variations:</p>
+            <p><code>cd /path/to/dir</code></p>
+            <p><code>cd ..</code> (up one level)</p>
+            <p><code>cd ~</code> (to home directory)</p>
+            <p>When to use: Moving around the filesystem.</p>
+            <h3><code>tree</code></h3>
+            <p>Function: Shows directory structure as a tree.</p>
+            <p>When to use: For a visual overview of folders and subfolders.</p>
+        </li>
+        <li>
+            <h2 id="#manage">File Management</h2>
+            <h3><code>touch</code></h3>
+            <p>Function: Create an empty file or update file timestamps.</p>
+            <p>When to use: Quick file creation.</p>
+            <h3><code>cp</code></h3>
+            <p>Function: Copy files or directories.</p>
+            <p>Variations:</p>
+            <p><code>cp file1 file2</code></p>
+            <p><code>cp -r dir1 dir2</code> (recursive copy)</p>
+            <p>When to use: Duplicating files or directories.</p>
+            <h3><code>mv</code></h3>
+            <p>Function: Move or rename files/directories.</p>
+            <p>When to use: To rename or reorganize files.</p>
+            <h3><code>rm</code></h3>
+            <p>Function: Delete files.</p>
+            <p>Variations:</p>
+            <p><code>rm file</code></p>
+            <p><code>rm -r dir</code> (recursive delete)</p>
+            <p><code>rm -f file</code> (force delete)</p>
+            <p>When to use: Removing files or directories (Use caution).</p>
+            <h3><code>find</code></h3>
+            <p>Function: Search for files.</p>
+            <p>Variations:</p>
+            <p><code>find . -name "file.txt"</code></p>
+            <p><code>find /path -type d -name "dir"</code></p>
+            <p>When to use: Locating files based on name, type, or attributes.</p>
+        </li>
+        <li>
+            <h2 id="view">Viewing and Editing Files</h2>
+            <h3><code>cat</code></h3>
+            <p>Function: Concatenate or view file contents.</p>
+            <p>When to use: Quick file preview.</p>
+            <h3><code>less</code></h3>
+            <p>Function: Paginated file viewing.</p>
+            <p>When to use: Viewing large files.</p>
+            <h3><code>head</code> and <code>tail</code></h3>
+            <p>Function: Show first/last lines of a file.</p>
+            <p>Variations:</p>
+            <p><code>head -n 20 file</code></p>
+            <p><code>tail -f logfile</code> (live updates)</p>
+            <p>When to use: Checking beginnings or ends of files, logs.</p>
+            <h3><code>nano</code>, <code>vim</code>, <code>gedit</code></h3>
+            <p>Function: Text editors.</p>
+            <p>When to use: Editing giles directly from terminal (choose based on preference)</p>
+        </li>
+        <li>
+            <h2 id="perms">Permissions and Ownership</h2>
+            <h3><code>chmod</code></h3>
+            <p>Function: Change file permissions.</p>
+            <p>Variations:</p>
+            <p><code>chmod 755 file</code></p>
+            <p><code>chmod u+x script.sh</code></p>
+            <h3><code>chown</code></h3>
+            <p>Function: Change file owner/group.</p>
+            <p>Variations:</p>
+            <p><code>chown user file</code></p>
+            <p><code>chown user:group file</code></p>
+            <p>When to use: Adjust Ownership for users/services.</p>
+            <h3><code>umask</code></h3>
+            <p>Function: Sets default permission masks.</p>
+            <p>When to use: Define default permissions for new files.</p>
+        </li>
+        <li>
+            <h2 id="process">Processes and System Monitoring</h2>
+            <h3><code>ps</code></h3>
+            <p>Function: Show running processes.</p>
+            <p>Variations:</p>
+            <p><code>ps aux</code> (all processes with details)</p>
+            <p>When to use: Checking process status.</p>
+            <h3><code>top</code> / <code>htop</code></h3>
+            <p>Function: Live system monitoring.</p>
+            <p>When to use: Tracking CPU, memory usage, and processes.</p>
+            <h3><code>kill</code></h3>
+            <p>Function: Terminate processes.</p>
+            <p>Variations:</p>
+            <p><code> kill [file]</code></p>
+            <p><code>kill -9 [file]</code> (force kill)</p>
+            <h3><code>jogs</code>, <code>bg</code>, <code>fg</code></h3>
+            <p>Function: Manage background/foreground jobs.</p>
+            <p>When to use: Controlling multitasking in the shell.</p>
+        </li>
+        <li>
+            <h2 id="disk">Disk and Filesystem Management</h2>
+            <h3><code>df</code></h3>
+            <p>Function: Show disk space usage.</p>
+            <p>Variations:</p>
+            <p><code>df -h</code> (human readable)</p>
+            <p>When to use: Checking free/used space.</p>
+            <h3><code>du</code></h3>
+            <p>Function: Show file/directory space usage.</p>
+            <p>Variations:</p>
+            <p><code>du -sh dir</code></p>
+            <p>When to use: Checking how much space a directory takes.</p>
+            <h3><code>mount</code> / <code>unmount</code></h3>
+            <p>Function: Mount/unmount filesystems.</p>
+            <p>When to use: Managing external drives, partitions.</p>
+        </li>
+        <li>
+            <h2 id="network">Networking</h2>
+            <h3><code>ping</code></h3>
+            <p>Function: Test connectivity to a host.</p>
+            <p>When to use: Troubleshooting network reachability.</p>
+            <h3><code>ifconfig</code> / <code>ip</code></h3>
+            <p>Function: Show or configure network interfaces.</p>
+            <p>When to use: Checking or assigning IP addresses.</p>
+            <h3><code>curl</code></h3>
+            <p>Function: Transfer data from/to URLs.</p>
+            <p>Variations:</p>
+            <p><code>curl [url]</code></p>
+            <p><code>curl -0 [file]</code></p>
+            <p>When to use: Downloading files, API testing.</p>
+            <h3><code>wget</code></h3>
+            <p>Function: Downloading files from the internet.</p>
+            <p>Variations:</p>
+            <p><code>wget [link]</code></p>
+            <p><code>wget -c [link]</code> (resume download)</p>
+            <p>When to use: Fetching files over HTTP/FTP.</p>
+            <h3><code>ssh</code></h3>
+            <P>Function: Secure shell login to remote machines.</P>
+            <p>Variations:</p>
+            <p><Code>ssh user@host</Code></p>
+            <p><code>ssh -p 2222 user@host</code></p>
+            <p>When to use: Remote administration.</p>
+            <h3><code>scp</code></h3>
+            <p>Securly copy files over SSH.</p>
+            <p>Variations:</p>
+            <p><code>scp [file] user@host:/path</code></p>
+            <p><code>scp -r dir user@host:/path</code></p>
+            <p>When to use: File transfer between systems.</p>
+        </li>
+        <li>
+
+        </li>
+    </ol>
 </body>
 </html>
