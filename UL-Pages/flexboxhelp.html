@@ -4,13 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexbox Help</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <header>
-        <a href="../index.html">Home</a>
+        <a id ="#top" href="../index.html">Home</a>
+        <a> | </a>
         <a href="./githelp.html">Git</a>
+        <a> | </a>
         <a href="./linuxhelp.html">Linux</a>
+        
+        <ol class="toolbar">
+            <li><a href="#container basics">Container Basics</a></li>
+            <li><a href="#main-axis-control">Main Axis Control</a></li>
+            <li><a href="#main-axis-alignment">Main Axis Alignment</a></li>
+            <li><a href="#cross-axis-alignment">Cross Axis Alignment</a></li>
+            <li><a href="#individual-item-control">Individual Item Control</a></li>
+            <li><a href="#gap-spacing">Gap Spacing</a></li>
+            <li><a href="#comparison">Comparison</a></li>
+        </ol>
     </header>
+    <ol>
+        <li>
+            <h2 id="container-basics">Container Basics</h2>
+            <h3><code>display</code></h3>
+            <p>Function: Turns an element into a flex container.</p>
+            <p>Common Variations:</p>
+            <p><code>display: flex;</code> (block-level container)</p>
+            <p><code>display: inline-flex;</code> (inline-level container)</p>
+            <p>When to use: Whenever you need flexible alignment and layout for child elements.</p>
+        </li>
+
+        <li>
+            <h2 id="main-axis-control">Main Axis Control</h2>
+
+            <h3><code>flex-direction</code></h3>
+            <p>Function: Defines the main axis (row vs. column).</p>
+            <p>Common Variations:</p>
+            <p><code>row</code> (default — left to right)</p>
+            <p><code>row-reverse</code> (right to left)</p>
+            <p><code>column</code> (top to bottom)</p>
+            <p><code>column-reverse</code> (bottom to top)</p>
+            <p>When to use: To change the flow direction of flex items.</p>
+
+            <h3><code>flex-wrap</code></h3>
+            <p>Function: Controls whether flex items wrap onto multiple lines.</p>
+            <p>Common Variations:</p>
+            <p><code>nowrap</code> (default — all items on one line)</p>
+            <p><code>wrap</code> (items wrap onto multiple lines)</p>
+            <p><code>wrap-reverse</code> (wrap in reverse order)</p>
+            <p>When to use: To allow items to break into multiple rows/columns.</p>
+
+            <h3><code>flex-flow</code></h3>
+            <p>Function: Shorthand for flex-direction + flex-wrap.</p>
+            <p>Common Variations:</p>
+            <p><code>flex-flow: row wrap;</code></p>
+            <p>When to use: Compactly define direction and wrapping.</p>
+        </li>
+
+        <li>
+            <h2 id="main-axis-alignment">Main Axis Alignment</h2>
+
+            <h3><code>justify-content</code></h3>
+            <p>Function: Aligns flex items along the main axis.</p>
+            <p>Common Variations:</p>
+            <p><code>flex-start</code> (default — start of axis)</p>
+            <p><code>flex-end</code> (end of axis)</p>
+            <p><code>center</code> (centered)</p>
+            <p><code>space-between</code> (equal space between items)</p>
+            <p><code>space-around</code> (equal space around items)</p>
+            <p><code>space-evenly</code> (equal spacing everywhere)</p>
+            <p>When to use: To control horizontal alignment in rows or vertical alignment in columns.</p>
+        </li>
+
+        <li>
+            <h2 id="cross-axis-alignment">Cross Axis Alignment</h2>
+
+            <h3><code>align-items</code></h3>
+            <p>Function: Aligns items along the cross axis.</p>
+            <p>Common Variations:</p>
+            <p><code>stretch</code> (default — stretch to fill)</p>
+            <p><code>flex-start</code> (align at cross-axis start)</p>
+            <p><code>flex-end</code> (align at cross-axis end)</p>
+            <p><code>center</code> (centered)</p>
+            <p><code>baseline</code> (align text baselines)</p>
+            <p>When to use: To vertically align items in a row or horizontally align items in a column.</p>
+
+            <h3><code>align-content</code></h3>
+            <p>Function: Aligns multiple lines of flex items along the cross axis (only applies if wrapping).</p>
+            <p>Common Variations:</p>
+            <p><code>stretch</code> (default — fill container)</p>
+            <p><code>flex-start</code></p>
+            <p><code>flex-end</code></p>
+            <p><code>center</code></p>
+            <p><code>space-between</code></p>
+            <p><code>space-around</code></p>
+            <p>When to use: To control spacing between wrapped rows or columns.</p>
+        </li>
+
+        <li>
+            <h2 id="individual-item-control">Individual Item Control</h2>
+
+            <h3><code>align-self</code></h3>
+            <p>Function: Overrides align-items for a specific flex item.</p>
+            <p>Common Variations:</p>
+            <p><code>auto</code> (default, inherits from parent)</p>
+            <p><code>flex-start</code></p>
+            <p><code>flex-end</code></p>
+            <p><code>center</code></p>
+            <p><code>baseline</code></p>
+            <p><code>stretch</code></p>
+            <p>When to use: To align one item differently from others.</p>
+
+            <h3><code>order</code></h3>
+            <p>Function: Controls the order of items.</p>
+            <p>Default: <code>0</code></p>
+            <p>When to use: To visually reorder items without changing HTML structure.</p>
+
+            <h3><code>flex</code></h3>
+            <p>Function: Shorthand for flex-grow, flex-shrink, and flex-basis.</p>
+            <p>Common Variations:</p>
+            <p><code>flex: 1 1 auto;</code></p>
+            <p><code>flex: 0 0 200px;</code> (fixed basis, no grow/shrink)</p>
+            <p>When to use: Quick control over how items grow/shrink.</p>
+
+            <h4><code>flex-grow</code></h4>
+            <p>Function: Defines how much an item grows relative to siblings.</p>
+            <p>Example: <code>flex-grow: 2;</code> (item grows twice as fast)</p>
+
+            <h4><code>flex-shrink</code></h4>
+            <p>Function: Defines how much an item shrinks when space is tight.</p>
+            <p>Example: <code>flex-shrink: 0;</code> (item won’t shrink)</p>
+
+            <h4><code>flex-basis</code></h4>
+            <p>Function: Initial size of item before growing/shrinking.</p>
+            <p>Example: <code>flex-basis: 200px;</code></p>
+        </li>
+
+        <li>
+            <h2 id="gap-spacing">Gap & Spacing</h2>
+
+            <h3><code>gap</code></h3>
+            <p>Function: Controls spacing between flex items.</p>
+            <p>Common Variations:</p>
+            <p><code>gap: 20px;</code></p>
+            <p><code>row-gap: 10px; column-gap: 20px;</code></p>
+            <p>When to use: Cleaner alternative to margins for spacing items.</p>
+        </li>
+
+        <li>
+            <h2 id="comparison">Comparison: When to Use Which</h2>
+            <p><code>justify-content</code> vs <code>align-items</code>: Use <code>justify-content</code> for main-axis alignment, <code>align-items</code> for cross-axis.</p>
+            <p><code>align-items</code> vs <code>align-content</code>: Use <code>align-items</code> for single-line containers, <code>align-content</code> for multi-line wrapping.</p>
+            <p><code>order</code> vs HTML rearranging: Use <code>order</code> for quick reordering, but prefer semantic HTML changes when possible.</p>
+            <p><code>gap</code> vs margins: Use <code>gap</code> for consistent spacing; margins for individual element control.</p>
+        </li>
+    </ol> 
+    <footer>
+        <a href="#top">Back to Top</a>
+        <a> | </a>
+        <a href="../index.html">Home</a>
+        <a> | </a>
+        <a href="./githelp.html">Git</a>
+        <a> | </a>
+        <a href="./linuxhelp.html">Linux</a>
+    </footer>  
+
 </body>
 </html>
